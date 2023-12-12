@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Book Library</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/icomoon.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+    <link rel="stylesheet" href="../css/transitions.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/color.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Assignment2</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                     
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    
+                    
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Authors">Authors</a>
+
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="IndexUser">Products</a>
+
+                    
+                        @if (User.IsInRole("Admin"))
+                        {
+                            
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Admin Products</a>
+                            
+                        }
+                        @if (User.IsInRole("Admin"))
+                        {
+
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Create">Create Products</a>
+                            
+                        }
+                    </ul>
+
+				</div>
+                <partial name="_LoginPartial" />
+
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/js/vendor/jquery-library.js"></script>
+    <script src="~/js/vendor/bootstrap.min.js"></script>
+    <!--<script src="https://maps.google.com/maps/api/js?key=AIzaSyCR-KEWAVCn52mSdeVeTqZjtqbmVJyfSus&amp;language=en"></script>-->
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.vide.min.js"></script>
+    <script src="~/js/countdown.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+    <script src="~/js/parallax.js"></script>
+    <script src="~/js/countTo.js"></script>
+    <script src="~/js/appear.js"></script>
+    <script src="~/js/gmap3.js"></script>
+    <script src="~/js/main.js"></script>
+</body>
+</html>
